@@ -5,17 +5,22 @@ public class RedBlackTree<Key extends Comparable<Key>, Value> {
 	private Node<Key, Value> root;
 	private static final boolean RED = true;
 	private static final boolean BLACK = false;
+	private int count;
 	
 	public Value get(Key key) {
 		Node<Key, Value> x = root;
+		count = 0;
 		
 		while (x != null) {
 			int cmp = key.compareTo(x.key);
 			if(cmp < 0) {
 				x = x.left;
+				count++;
 			} else if (cmp > 0) {
 				x = x.right;
+				count++;
 			} else {
+				count++;
 				return x.value;
 			}
 		}
@@ -82,6 +87,10 @@ public class RedBlackTree<Key extends Comparable<Key>, Value> {
 			return false;
 		}
 		return x.color == RED;
+	}
+	
+	public int getCount() {
+		return this.count;
 	}
 	
 }
