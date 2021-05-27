@@ -10,8 +10,9 @@ public class Student {
 	 private String departmentName;
 	 private int yearOfEnrolment;
 	 
-	 public Student(int id, String dateOfBirth, String university, String departmentCode, String departmentName, int yearOfEnrolment) {
+	 public Student(int id, String fullName, String dateOfBirth, String university, String departmentCode, String departmentName, int yearOfEnrolment) {
 		 this.id = id;
+		 this.fullName = fullName;
 		 this.dateOfBirth = dateOfBirth;
 		 this.university = university;
 		 this.departmentCode = departmentCode;
